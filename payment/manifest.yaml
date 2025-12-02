@@ -23,14 +23,14 @@ metadata:
     component: payment
     tier: backend
 spec:
- replicas: 1
- selector:
-# these labels are used to select pods
-  matchLabels:
-    project: roboshop
-    component: payment
-    tier: backend
-# pod definition
+  replicas: 1
+  selector:
+  # these labels are used to select pods
+    matchLabels:
+      project: roboshop
+      component: payment
+      tier: backend
+  # pod definition
   template:
     metadata:
       labels:

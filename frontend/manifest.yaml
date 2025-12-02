@@ -10,14 +10,14 @@ metadata:
     component: frontend
     tier: frontend
 spec:
- replicas: 1
- selector:
-# these labels are used to select pods
-  matchLabels:
-    project: roboshop
-    component: frontend
-    tier: frontend
-# pod definition
+  replicas: 1
+  selector:
+    # these labels are used to select pods
+    matchLabels:
+      project: roboshop
+      component: frontend
+      tier: frontend
+  # pod definition
   template:
     metadata:
       labels:
