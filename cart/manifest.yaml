@@ -19,14 +19,14 @@ metadata:
     component: cart
     tier: backend
 spec:
- replicas: 1
- selector:
-# these labels are used to select pods
-  matchLabels:
-    project: roboshop
-    component: cart
-    tier: backend
-# pod definition
+  replicas: 1
+  selector:
+  # these labels are used to select pods
+    matchLabels:
+      project: roboshop
+      component: cart
+      tier: backend
+  # pod definition
   template:
     metadata:
       labels:
@@ -39,7 +39,7 @@ spec:
         image: joindevops/cart:v1
         imagePullPolicy: Always
         envFromRef:
-        - ConfigMap:
+        - configMapRef:
             name: cart
         ports:
         - name: liveness-port
