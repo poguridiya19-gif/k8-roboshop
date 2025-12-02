@@ -39,7 +39,7 @@ spec:
         image: joindevops/user:v1
         imagePullPolicy: Always
         envFrom:
-        - ConfigMapRef:
+        - configMapRef:
             name: user
         ports:
         - name: liveness-port
