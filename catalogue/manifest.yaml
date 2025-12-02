@@ -38,7 +38,7 @@ spec:
         image: joindevops/catalogue:v1
         imagePullPolicy: Always
         envFrom:
-        - ConfigMap:
+        - ConfigMapRef:
             name: catalogue
         ports:
         - name: liveness-port
