@@ -20,12 +20,12 @@ metadata:
 spec:
  replicas: 1
  selector:
-# these labels are used to select pods
+  # these labels are used to select pods
   matchLabels:
     project: roboshop
     component: catalogue
     tier: backend
-# pod definition
+  # pod definition
   template:
     metadata:
       labels:
