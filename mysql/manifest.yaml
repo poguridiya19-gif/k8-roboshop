@@ -19,22 +19,22 @@ metadata:
     component: mysql
     tier: db
 spec:
- replicas: 1
- selector:
-# these labels are used to select pods
-  matchLabels:
-    project: roboshop
-    component: mysql
-    tier: db
-# pod definition
-  template:
-   metadata:
-    labels:
+  replicas: 1
+  selector:
+  # these labels are used to select pods
+    matchLabels:
       project: roboshop
       component: mysql
       tier: db
-   spec:
-    containers:
+  # pod definition
+  template:
+    metadata:
+      labels:
+        project: roboshop
+        component: mysql
+        tier: db
+    spec:
+      containers:
       - name: mysql
         image: joindevops/mysql:v1
         imagePullPolicy: Always
