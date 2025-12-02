@@ -32,29 +32,29 @@ template:
       project: roboshop
       component: catalogue
       tier: backend
-    spec:
-      containers:
-      - name: catalogue
-        image: joindevops/catalogue:v1
-        imagePullPolicy: Always
-        envFrom:
-        - ConfigMapRef:
-            name: catalogue
-        ports:
-        - name: liveness-port
-          containerPort: 8080
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: liveness-port
-          failureThreshold: 1
-          periodSeconds: 15
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: liveness-port
-          failureThreshold: 1
-          periodSeconds: 15
+  spec:
+    containers:
+    - name: catalogue
+      image: joindevops/catalogue:v1
+      imagePullPolicy: Always
+      envFrom:
+      - ConfigMapRef:
+          name: catalogue
+      ports:
+      - name: liveness-port
+        containerPort: 8080
+      readinessProbe:
+        httpGet:
+          path: /health
+          port: liveness-port
+        failureThreshold: 1
+        periodSeconds: 15
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: liveness-port
+        failureThreshold: 1
+        periodSeconds: 15
 ---
 apiVersion: v1
 kind: Service
